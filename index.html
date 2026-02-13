@@ -33,6 +33,15 @@ src="https://www.facebook.com/tr?id=850188455390224&ev=PageView&noscript=1"
   </head>
 
   <body>
+
+<!-- POPUP -->
+<div id="popupOverlay" class="popup-overlay">
+  <div class="popup-content">
+    <button class="popup-close" id="popupClose">&times;</button>
+    <img src="assets/img/IMG-20260213-WA0008.jpg" alt="Promoción" class="popup-image">
+  </div>
+  </div>
+    
     <header class="hero">
         <p class="subtitulo">LA NUEVA PELÍCULA DEL TÍO ROBER</p>
         <img  src="titulo.png" alt="Una Pregunta Ridículamente Fácil" class="hero-title"/>
@@ -217,6 +226,33 @@ src="https://www.facebook.com/tr?id=850188455390224&ev=PageView&noscript=1"
     const content = track.innerHTML;
     track.innerHTML += content;
   });
+
+    document.addEventListener("DOMContentLoaded", function () {
+  const popup = document.getElementById("popupOverlay");
+  const closeBtn = document.getElementById("popupClose");
+
+  // Mostrar al cargar
+  popup.style.display = "flex";
+
+  // Cerrar con X
+  closeBtn.addEventListener("click", function () {
+    popup.style.display = "none";
+  });
+
+  // Cerrar haciendo clic fuera
+  popup.addEventListener("click", function (e) {
+    if (e.target === popup) {
+      popup.style.display = "none";
+    }
+  });
+
+  // Cerrar con ESC
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      popup.style.display = "none";
+    }
+  });
+});
 </script>
 
 </html>
