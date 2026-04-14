@@ -420,15 +420,6 @@ body {
   overflow: hidden;
 }
 
-/* Textura tipo luces / escenario sutil */
-.shows-highlight::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url("assets/img/roast-timer.png");
-  opacity: 0.08;
-  pointer-events: none;
-}
 
 .shows-highlight__content {
   position: relative;
