@@ -492,7 +492,7 @@ body {
 
 .popup-content {
   position: relative;
-  max-width: 600px;
+  max-width: 50vw;
   width: 100%;
 }
 
@@ -673,4 +673,9 @@ body {
       .deadline-text {
         font-size: 16px;
       }
+
+
+      .popup-content {
+  max-width: 600px;
+}
     }
