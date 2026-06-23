@@ -24,7 +24,14 @@
 </head>
 
 <body>
-
+<!-- MODAL -->
+<div id="promoModal" class="modal">
+    <div class="modal-content">
+        <a href="https://www.ticketmania.mx/events/una-pregunta-ridiculamente-facil-en-gdl" target="_blank">
+            <img src="assets/img/nu-mor-gdl.png" alt="Promoción">
+        </a>
+    </div>
+</div>
 
   <!-- BOTÓN HAMBURGUESA -->
   <button class="menu-toggle" id="menuToggle">
@@ -564,7 +571,15 @@
     </div>
   </footer>
 
+<script>
+  modal.style.display = 'none';
 
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        modal.style.display = 'flex';
+    }, 1000); // 1 segundo
+});
+</script>
   <script src="app.js" type="text/javascript"></script>
 
 </body>
