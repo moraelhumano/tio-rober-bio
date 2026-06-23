@@ -867,28 +867,28 @@ body{
 }
 
 }
-
-
+.center-center{
+  text-align: center;
+    display: flex;
+    justify-content: center;
+}
 
 .modal {
+    display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.7);
-    display: flex;
+    background: rgba(0,0,0,.8);
     justify-content: center;
     align-items: center;
     z-index: 9999;
 }
 
 .modal-content {
+  width: auto;
     max-width: 90%;
-    max-height: 90%;
 }
 
 .modal-content img {
     display: block;
-    max-width: 100%;
-    max-height: 90vh;
-    border-radius: 10px;
-    cursor: pointer;
+    max-width: 75%;
 }

@@ -52,3 +52,23 @@ function closeMenu(){
   menuOverlay.classList.remove('active');
 
 }
+
+
+
+
+const modal = document.getElementById('promoModal');
+const modalContent = document.querySelector('.modal-content');
+
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        modal.style.display = 'flex';
+    }, 1000);
+});
+
+modal.addEventListener('click', () => {
+    modal.style.display = 'none';
+});
+
+modalContent.addEventListener('click', (e) => {
+    e.stopPropagation();
+});
