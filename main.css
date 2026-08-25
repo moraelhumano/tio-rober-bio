@@ -290,6 +290,19 @@ background-image: url("assets/img/fondo-gira-2.png");
       letter-spacing: .05rem;
     }
 
+
+.center-center {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.center-center img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
     /* =========================
        FOOTER
     ========================== */
