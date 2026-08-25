@@ -293,7 +293,7 @@ background-image: url("assets/img/fondo-gira-2.png");
 
 .center-center {
     display: block;
-    width: 50%;
+    width: 100%;
     margin: 0 auto;
 }
 
