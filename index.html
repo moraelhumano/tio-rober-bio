@@ -14,14 +14,116 @@
   <link rel="icon" type="image/x-icon" href="/assets/img/tio-fav-icon.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<script>
 
+  document.addEventListener("DOMContentLoaded", function () {
+
+  const modal = document.getElementById("balagardos-modal");
+  const contenido = modal.querySelector(".balagardos-contenedor");
+  const iframe = modal.querySelector("iframe");
+
+  // Mostrar modal al cargar la página
+  modal.style.display = "flex";
+
+  // Cerrar al hacer clic fuera del contenido
+  modal.addEventListener("click", function (event) {
+    if (!contenido.contains(event.target)) {
+      cerrarModal();
+    }
+  });
+
+  // Cerrar con tecla ESC
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+      cerrarModal();
+    }
+  });
+
+  function cerrarModal() {
+    modal.style.display = "none";
+
+    // Detener reproducción de YouTube
+    iframe.src = iframe.src;
+  }
+
+});
+</script>
 
 
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
     rel="stylesheet" />
 
+<style>
+.balagardos-contenedor {
+  position: relative;
+  width: 100%;
+  max-width: 650px;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+}
 
+/* MARCO */
+.balagardos-marco {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* VIDEO ENCIMA DEL MARCO */
+.balagardos-video {
+  position: absolute;
+
+  /* Posición dentro del espacio transparente */
+  top: 39%;
+  left: 13%;
+
+  width: 74%;
+  height: 39%;
+
+  z-index: 2;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.balagardos-video iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+
+.balagardos-overlay {
+  position: fixed;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.85);
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 99999;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.balagardos-contenedor {
+  position: relative;
+  width: 100%;
+  max-width: 650px;
+  max-height: 95vh;
+  aspect-ratio: 1 / 1;
+}
+</style>
 </head>
 
 <body>
@@ -33,6 +135,31 @@
         </a>
     </div>
 </div>-->
+
+<div id="balagardos-modal" class="balagardos-overlay">
+  <div class="balagardos-contenedor">
+
+
+
+  <!-- MARCO PNG -->
+  <img
+    src="assets/img/marco-video.png"
+    class="balagardos-marco"
+    alt="Los Balagardos"
+  >
+
+  <!-- VIDEO YOUTUBE -->
+  <div class="balagardos-video">
+    <iframe
+      src="https://www.youtube.com/embed/yfqtBzU9A4k?si=SlyivkApNwX2PcBk"
+      title="Último episodio de Los Balagardos"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+</div>
+</div>
 
   <!-- BOTÓN HAMBURGUESA -->
   <button class="menu-toggle" id="menuToggle">
@@ -87,6 +214,9 @@
   <!-- TOUR -->
   <section class="tour h-[50dvh]" id="tour">
     <div class="container">
+      <div class="section-title flex flex-col justify-center">
+      <img src="assets/img/tour-2026-2.png" alt="">
+      </div>
       <img src="assets/img/proximamente-mas-fechas.png" alt="proximamente-mas-fechas" style="font-size: 2rem;" class="self-center items-center text-center">
       <section class="tour-grid" id="tourGrid">
        
